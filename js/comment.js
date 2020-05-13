@@ -14,7 +14,7 @@ function parseComments() {
     const comments = doc.Comments
     if (comments.Count === 0) {
         alert('此文档中没有批注')
-        return
+        return null
     }
     const res = [fileName]
     for (let i = 1; i < comments.Count + 1; i++) {
@@ -61,5 +61,7 @@ function writeToDoc(comments) {
 
 function getComments() {
     const comments = parseComments()
-    writeToDoc(comments)
+    if (comments) {
+        writeToDoc(comments)
+    }
 }
