@@ -1,10 +1,10 @@
 
 //这个函数在整个wps加载项中是第一个执行的
-function OnAddinLoad(ribbonUI){
-    if (typeof (wps.ribbonUI) != "object"){
-		wps.ribbonUI = ribbonUI
+function OnAddinLoad(ribbonUI) {
+    if (typeof (wps.ribbonUI) != "object") {
+        wps.ribbonUI = ribbonUI
     }
-    
+
     if (typeof (wps.Enum) != "object") { // 如果没有内置枚举值
         wps.Enum = WPS_Enum
     }
@@ -16,7 +16,42 @@ function OnAddinLoad(ribbonUI){
 function OnAction(control) {
     const eleId = control.Id
     switch (eleId) {
-        case "btnShowMsg":
+        case "btnFetchObject":
+            {
+                getMetaData('object')
+            }
+            break;
+        case "btnFetchLine":
+            {
+                getMetaData('line')
+            }
+            break;
+        case "btnFormat":
+            {
+                const doc = wps.WpsApplication().ActiveDocument
+                if (!doc) {
+                    alert("当前没有打开任何文档")
+                    return
+                }
+                alert(doc.Name)
+            }
+            break;
+        case "btnComment":
+            {
+                getComments()
+            }
+            break;
+        case "btnFindValue":
+            {
+                const doc = wps.WpsApplication().ActiveDocument
+                if (!doc) {
+                    alert("当前没有打开任何文档")
+                    return
+                }
+                alert(doc.Name)
+            }
+            break;
+        case "btnTitle":
             {
                 const doc = wps.WpsApplication().ActiveDocument
                 if (!doc) {
@@ -30,11 +65,11 @@ function OnAction(control) {
             {
                 let bFlag = wps.PluginStorage.getItem("EnableFlag")
                 wps.PluginStorage.setItem("EnableFlag", !bFlag)
-                
+
                 //通知wps刷新以下几个按饰的状态
                 wps.ribbonUI.InvalidateControl("btnIsEnbable")
-                wps.ribbonUI.InvalidateControl("btnShowDialog") 
-                wps.ribbonUI.InvalidateControl("btnShowTaskPane") 
+                wps.ribbonUI.InvalidateControl("btnShowDialog")
+                wps.ribbonUI.InvalidateControl("btnShowTaskPane")
                 //wps.ribbonUI.Invalidate(); 这行代码打开则是刷新所有的按钮状态
                 break
             }
@@ -64,8 +99,16 @@ function OnAction(control) {
 function GetImage(control) {
     const eleId = control.Id
     switch (eleId) {
-        case "btnShowMsg":
-            return "images/1.svg"
+        case "btnFetchObject":
+            return "images/json.svg"
+        case "btnFormat":
+            return "images/brush.svg"
+        case "btnComment":
+            return "images/comment.svg"
+        case "btnFindValue":
+            return "images/search.svg"
+        case "btnTitle":
+            return "images/shovel.svg"
         case "btnShowDialog":
             return "images/2.svg"
         case "btnShowTaskPane":
@@ -100,17 +143,17 @@ function OnGetEnabled(control) {
     return true
 }
 
-function OnGetVisible(control){
+function OnGetVisible(control) {
     return true
 }
 
-function OnGetLabel(control){
+function OnGetLabel(control) {
     const eleId = control.Id
     switch (eleId) {
-    case "btnIsEnbable":
-        let bFlag = wps.PluginStorage.getItem("EnableFlag")
-        return bFlag ?  "按钮Disable" : "按钮Enable"
-        break
+        case "btnIsEnbable":
+            let bFlag = wps.PluginStorage.getItem("EnableFlag")
+            return bFlag ? "按钮Disable" : "按钮Enable"
+            break
     }
     return ""
 }

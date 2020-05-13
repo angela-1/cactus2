@@ -1,9 +1,27 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="OnAddinLoad">
     <ribbon startFromScratch="false">
         <tabs>
-            <tab id="wpsAddinTab" label="wps加载项示例">
+            <tab id="wpsAddinTab" label="仙人掌2">
                 <group id="btnDemoGroup" label="group1">
-                    <button id="btnShowMsg" label="弹出消息框" onAction="OnAction" getEnabled="OnGetEnabled" getImage="GetImage" visible="true" size="large"/>
+                    <splitButton id="btnFetchObject" getImage="GetImage" size="large">
+                        <button id="btnFetchObject" label="文档对象" onAction="OnAction" />
+                        <menu id="menu">
+                            <button id="btnFetchObject" label="JSON对象" onAction="OnAction" />
+                            <button id="btnFetchLine" label="行对象" onAction="OnAction" />
+                        </menu>
+                    </splitButton>
+                    <button id="btnFormat" label="套用格式" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
+                    <button id="btnComment" label="导出批注" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
+                    <button id="btnFindValue" label="查找内容" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
+                    <splitButton id="btnTitle" getImage="GetImage" size="large">
+                        <button id="btnTitle" label="提取标题" onAction="OnAction" />
+                        <menu id="menu">
+                            <button id="btnTitle1" label="一级标题" onAction="OnAction" />
+                            <button id="btnTitle2" label="二级标题" onAction="OnAction" />
+                            <button id="btnTitle2" label="三级标题" onAction="OnAction" />
+                            <button id="btnOrg" label="单位名称" onAction="OnAction" />
+                        </menu>
+                    </splitButton>
                     <button id="btnIsEnbable" getLabel="OnGetLabel" onAction="OnAction" enabled="true" getImage="GetImage" visible="true" size="large"/>
                     <button id="btnShowDialog" label="弹对话框网页" onAction="OnAction" getEnabled="OnGetEnabled" getImage="GetImage" getVisible="OnGetVisible" size="large"/>
                     <button id="btnShowTaskPane" label="弹任务窗格网页" onAction="OnAction" getEnabled="OnGetEnabled" getImage="GetImage" getVisible="OnGetVisible" size="large"/>
