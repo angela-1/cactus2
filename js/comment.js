@@ -8,12 +8,12 @@ const WdInformation = {
 }
 
 
-function parseComments() {
+function parseOrgs() {
     const doc = wps.WpsApplication().ActiveDocument
     const fileName = doc.Name;
     const comments = doc.Comments
     if (comments.Count === 0) {
-        alert('此文档中没有批注')
+        alert('文档没有批注')
         return null
     }
     const res = [fileName]
@@ -45,7 +45,7 @@ function writeToDoc(comments) {
     par.Range.InsertParagraphAfter();
 
     const fileName = comments.shift()
-    par.Range.InsertAfter('以下是来自文档“' + fileName + '”的批注。');
+    par.Range.InsertAfter('以下是来自文档“' + fileName + '”的批注：');
     par.Range.InsertParagraphAfter();
 
     par.Range.InsertAfter('------------------------分割线------------------------');
@@ -59,8 +59,8 @@ function writeToDoc(comments) {
 }
 
 
-function getComments() {
-    const comments = parseComments()
+function getOrgs() {
+    const comments = parseOrgs()
     if (comments) {
         writeToDoc(comments)
     }

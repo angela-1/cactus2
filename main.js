@@ -6,3 +6,4 @@ document.write("<script language='javascript' src='js/systemdemo.js'></script>")
 // 各功能处理函数
 document.write("<script language='javascript' src='js/metadata.js'></script>");
 document.write("<script language='javascript' src='js/comment.js'></script>");
+document.write("<script language='javascript' src='js/org-finder.js'></script>");

@@ -61,6 +61,11 @@ function OnAction(control) {
                 alert(doc.Name)
             }
             break;
+        case "btnOrg":
+            {
+               getOrgs()
+            }
+            break;
         case "btnIsEnbable":
             {
                 let bFlag = wps.PluginStorage.getItem("EnableFlag")

@@ -14,7 +14,7 @@
                     <button id="btnComment" label="导出批注" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
                     <button id="btnFindValue" label="查找内容" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
                     <splitButton id="btnTitle" getImage="GetImage" size="large">
-                        <button id="btnTitle" label="提取标题" onAction="OnAction" />
+                        <button id="btnTitle" label="提取内容" onAction="OnAction" />
                         <menu id="menu">
                             <button id="btnTitle1" label="一级标题" onAction="OnAction" />
                             <button id="btnTitle2" label="二级标题" onAction="OnAction" />
@@ -22,9 +22,9 @@
                             <button id="btnOrg" label="单位名称" onAction="OnAction" />
                         </menu>
                     </splitButton>
-                    <button id="btnIsEnbable" getLabel="OnGetLabel" onAction="OnAction" enabled="true" getImage="GetImage" visible="true" size="large"/>
+                    <!-- <button id="btnIsEnbable" getLabel="OnGetLabel" onAction="OnAction" enabled="true" getImage="GetImage" visible="true" size="large"/>
                     <button id="btnShowDialog" label="弹对话框网页" onAction="OnAction" getEnabled="OnGetEnabled" getImage="GetImage" getVisible="OnGetVisible" size="large"/>
-                    <button id="btnShowTaskPane" label="弹任务窗格网页" onAction="OnAction" getEnabled="OnGetEnabled" getImage="GetImage" getVisible="OnGetVisible" size="large"/>
+                    <button id="btnShowTaskPane" label="弹任务窗格网页" onAction="OnAction" getEnabled="OnGetEnabled" getImage="GetImage" getVisible="OnGetVisible" size="large"/> -->
                 </group>
             </tab>
         </tabs>
