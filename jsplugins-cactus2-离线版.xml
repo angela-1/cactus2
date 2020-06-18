@@ -1,0 +1,4 @@
+<jsplugins>
+  <jsplugin name="cactus2" type="wps" url="http://localhost:5000/cactus2.7z"
+    version="0.0.6" />
+</jsplugins>
