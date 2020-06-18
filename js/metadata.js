@@ -36,7 +36,7 @@ function searchRegex(val, re) {
 }
 
 function searchCode(val) {
-    const re = /^\S+〔\d{4}〕\d+号$/
+    const re = /^\S+〔\d{4}〕\d+号/
     return searchRegex(val, re)
 }
 
