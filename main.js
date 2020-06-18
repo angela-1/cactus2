@@ -7,3 +7,4 @@ document.write("<script language='javascript' src='js/systemdemo.js'></script>")
 document.write("<script language='javascript' src='js/metadata.js'></script>");
 document.write("<script language='javascript' src='js/comment.js'></script>");
 document.write("<script language='javascript' src='js/org-finder.js'></script>");
+document.write("<script language='javascript' src='js/styles.js'></script>");

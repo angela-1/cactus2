@@ -10,7 +10,7 @@
                             <button id="btnFetchLine" label="行对象" onAction="OnAction" />
                         </menu>
                     </splitButton>
-                    <button id="btnFormat" label="套用格式" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
+                    <button id="btnStyles" label="套用格式" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
                     <button id="btnComment" label="导出批注" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
                     <button id="btnFindValue" label="查找内容" onAction="OnAction" getImage="GetImage" visible="true" size="large"/>
                     <splitButton id="btnTitle" getImage="GetImage" size="large">

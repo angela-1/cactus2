@@ -26,14 +26,9 @@ function OnAction(control) {
                 getMetaData('line')
             }
             break;
-        case "btnFormat":
+        case "btnStyles":
             {
-                const doc = wps.WpsApplication().ActiveDocument
-                if (!doc) {
-                    alert("当前没有打开任何文档")
-                    return
-                }
-                alert(doc.Name)
+                setStyles()
             }
             break;
         case "btnComment":
@@ -105,15 +100,15 @@ function GetImage(control) {
     const eleId = control.Id
     switch (eleId) {
         case "btnFetchObject":
-            return "images/json.svg"
-        case "btnFormat":
-            return "images/brush.svg"
+            return "images/json.png"
+        case "btnStyles":
+            return "images/brush.png"
         case "btnComment":
-            return "images/comment.svg"
+            return "images/comment.png"
         case "btnFindValue":
-            return "images/search.svg"
+            return "images/search.png"
         case "btnTitle":
-            return "images/shovel.svg"
+            return "images/shovel.png"
         case "btnShowDialog":
             return "images/2.svg"
         case "btnShowTaskPane":
