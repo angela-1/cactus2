@@ -1,7 +1,7 @@
 {
 	"name": "cactus2",
 	"addonType": "wps",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"description": "wps加载项示例, 执行npm install后，提供代码联想功能",
 	"devDependencies": {
 		"wps-jsapi": "^1.0.5"
