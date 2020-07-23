@@ -31,7 +31,7 @@ function copyToClipboard(val) {
 
 
 function searchRegex(val, re) {
-    const mat = val.replace(' ', '').replace('　', '').match(re)
+    const mat = val.replace(/\s*/g, '').match(re)
     return mat ? mat[0] : null
 }
 
@@ -95,7 +95,8 @@ function parseDoc() {
                 flag |= HAS_SEND_TO
                 const sendToLineNum = lines.indexOf(line)
                 const titleArray = lines.slice(codeLineNum + 1, sendToLineNum)
-                meta.title = titleArray.join('')
+                // 要去除空白字符，包括垂直制表符（也就是word里面的软回车）
+                meta.title = titleArray.join('').replace(/\s*/g, '')
                 flag |= HAS_TITLE
                 continue
             }
