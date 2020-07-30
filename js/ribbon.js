@@ -33,7 +33,7 @@ function OnAction(control) {
             break;
         case "btnComment":
             {
-                getComments()
+                Comments.getComments()
             }
             break;
         case "btnFindValue":
