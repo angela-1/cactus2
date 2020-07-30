@@ -1,7 +1,7 @@
 {
 	"name": "cactus2",
 	"addonType": "wps",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "文档助手",
 	"devDependencies": {
 		"wps-jsapi": "^1.0.5"
